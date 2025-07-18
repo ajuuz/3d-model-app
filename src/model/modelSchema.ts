@@ -15,6 +15,7 @@ export const modelSchema = new mongoose.Schema<IModel>({
         type:String,
         required:[true,'Please provide a name for model'],
         trim:true,
+        unique:true
     },
     fileId:{
         type:mongoose.Schema.ObjectId,
@@ -30,6 +31,6 @@ export const modelSchema = new mongoose.Schema<IModel>({
     },
 },{timestamps:true});
 
-const model = mongoose.models.model || mongoose.model<IModel>('models',modelSchema);
+const Model = mongoose.models.Model || mongoose.model<IModel>('Model',modelSchema);
 
-export default model;
+export default Model;
