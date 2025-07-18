@@ -3,7 +3,6 @@ import mongoose, { ObjectId } from "mongoose";
 
 export interface IModel extends Document{
    name:string,
-   description?:string,
    fileId:ObjectId,
    fileName:string,
    contentType:string,
@@ -16,9 +15,6 @@ export const modelSchema = new mongoose.Schema<IModel>({
         type:String,
         required:[true,'Please provide a name for model'],
         trim:true,
-    },
-    description:{
-        type:String
     },
     fileId:{
         type:mongoose.Schema.ObjectId,
